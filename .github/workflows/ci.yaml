@@ -41,7 +41,7 @@ jobs:
         run: go test ./...
 
   code-quality:
-    name:
+    name: static analysis
     runs-on: ubuntu-latest
     continue-on-error: true
 
@@ -84,9 +84,9 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: src/product-catalog
-          file: Dockerfile
+          file: src/product-catalog/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{ github.run.id }}
+          tags: devopssec123/product-catalog:${{ github.run_id }}
 
   
   updatek8s:
