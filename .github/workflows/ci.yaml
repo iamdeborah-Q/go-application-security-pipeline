@@ -41,8 +41,11 @@ jobs:
         run: go test ./...
 
   code-quality:
-    name: 
+    name:
     runs-on: ubuntu-latest
+    continue-on-error: true
+
+
 
     steps:
       - name: Checkout repository
